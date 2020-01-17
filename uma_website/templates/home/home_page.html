@@ -1,63 +1,202 @@
 {% extends "base.html" %}
 {% load static %}
+{% load wagtailimages_tags %}
+{% load wagtailcore_tags %}
+
+
+{% block title %}
+Unnat Maharashtra Abhiyan
+{% endblock %}
+
+{% block title_suffix %}
+Unnat Maharashtra Abhiyan
+{% endblock %}
 {% block content %}
+
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/footer_style.css' %}">
 <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'css/themify-icons.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'css/elegant-icons.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'css/nice-select.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'css/load-more-button.css' %}" type="text/css">
+
+
 {% endblock %}
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Workshop/Events
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
+<div id="preloder">
+  <div class="loader"></div>
+</div>
+
+<!-- Header Section Begin -->
+<header class="header-section">
+  <div class="header-top">
+      <div class="container">
+          <div class="ht-left">
+              <div class="mail-service">
+                  <h2 style="size:35;text-align:center;color:brown;font:simplifica"><b>{{ self.banner_title}}</b></h2><br>
+                  <h6 style="size:5;text-align:center;">{{ self.banner_subtitle }}</h6>
+              </div>
+              <div class="phone-service">
+
+              </div>
+          </div>
+        
+              <div class="logo_iit">
+                
+                  {% image self.logo_image fill-100x100 as logo %}
+                  <img src="{{ logo.url }}">
+              </div>
+          </div>
+      </div>
+  
+  <div class="nav-item">
+    <div class="my_container">
+        <nav class="nav-menu mobile-menu">
+              <ul class="nav-list">
+                  <li class=""><a href="./home.html">Home</a></li>
+                  <li><a href="#aboutus">About Us</a>
+                  <li><a href="#workshopsandevents">Workshops/Events</a></li>
+                  <li><a href="">Participating Institutes</a></li>
+                  <li><a href="#">Resources</a>
+                      <ul class="dropdown">
+                          <li><a href="#importantlinks">Important Links</a></li>
+                      </ul>
+                  </li>
+                  <li><a href="#contact">Contact</a></li>
+                  <li><a href="#">Apply</a></li>
+                  <li><a href="">Login</a></li>
+                 
+                  </li>
+              </ul>
+          </nav>
+      </div>
+  </div>
+</header>
+<!-- Header End -->
+
+
+<!-- carousel Section Begin -->
+<section class="hero-section">
+  <div class="hero-items owl-carousel">
+      {% for itr in self.carousel_images.all %}
+          {% image itr.carousel_image fill-900x1000 as c_img %}
+      <div class="single-hero-items set-bg" data-setbg="{{ c_img.url }}">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-5">
+                      <h1>{{ itr.carousel_image_title }}</h1>
+                      <p>{{ itr.carousel_image_information|richtext }}</p>
+                  </div>
+              </div>
+          </div>
+      </div>
+      {% endfor %}
+
+  </div>
+</section>
+<!-- carousel Section End -->
+ <!-- vision and mission / important Link -->
+<section class="deal-of-week set-bg spad" >
+  <div class="deal">
+    <div class="row mt-5">
+
+          <div class="col-md-6">
+       
+              <div class="section-title">
+                  <h2>Vision and Mission</h2>
+                  <div class="">
+                  <p>{{ self.vision_and_mission|richtext }}</p>
+          
+                  </div>
+              </div>
+            </div>
+
+<div class="col-md-6">
+          <div class="section-title">
+            <h2>Important Links</h2>
+            <div id="marqueecontainer">
+              <div id="vmarquee" style="position:absolute; width: 100%;">
+                <marquee direction="up" onmouseover="stop()" onmouseout="start()" scrollamount="5">
+                <p>{{ self.important_links|richtext }}</p>
+              </marquee>
+              </div>
+            </div>
+
+          </div>
+          </div>
         </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Resources</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Apply</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Contact</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+      </div>
+</section>
+ <!-- vision and link section end -->
+
+<!-- workshop/event -->
+<section class="latest-blog spad" id="workshopsandevents">
+  <div class="row">
+      <div class="col-lg-12">
+          <div class="section-title">
+              <h2>Workshops and Events</h2>
+          </div>
+      </div>
   </div>
-</nav>
-<div class="jumbotron jumbotron-fluid">
-    <div class="container">
-      <h1 class="display-4">{{ self.banner_title }}</h1>
-      <p class="lead">तकनीकी संस्थाओं का ज्ञान - स्वैच्छिक संगठनों का अनुभव - सरकार के संसाधन
-        सभी को मिलाकर गांवों के विकास के लिए</p>
-    </div>
+  <div class="row">
+      {{ self.workshop_and_events }}
+      <div id="loadMore" style="">
+        <a href="#">Load More</a>
+      </div>
   </div>
+</section>
 
 
+
+<!-- Media gallery Section Begin -->
+<section class="man-banner spad">
+  <div class="container-fluid">
+      <div class="row">
+          <div class="col-lg-8" >
+              <div class="filter-control">
+                <div class="section-title">
+                        <h2>Media Gallery</h2>
+                </div>
+              </div>
+              <div class="product-slider owl-carousel">
+                  <div class="product-item">  
+                      <div class="pi-pic">
+                          <img src="img/products/man-1.jpg" alt="">
+                          <div class="sale">Sale</div>
+                          <div class="icon">
+                              <i class="icon_heart_alt"></i>
+                          </div>
+                          <ul>
+                              <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
+                              <li class="quick-view"><a href="#">+ Quick View</a></li>
+                              <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
+                          </ul>
+                      </div>
+                      <div class="pi-text">
+                          <div class="catagory-name">Coat</div>
+                          <a href="#">
+                              <h5>Pure Pineapple</h5>
+                          </a>
+                          <div class="product-price">
+                              $14.00
+                              <span>$35.00</span>
+                          </div>
+                      </div>
+                  </div>
+      
+              </div>
+          </div>
+
+      </div>
+  </div>
+</section>
 
   <!-- Footer Content -->
  
@@ -114,7 +253,19 @@
 
 
 {% block extra_js %}
-
+ <!-- Js Plugins -->
+    <script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+    <script src="{% static 'js/jquery.nice-select.min.js' %}"></script>
+    <script src="{% static 'js/jquery.zoom.min.js' %}"></script>
+    <script src="{% static 'js/jquery.dd.min.js' %}"></script>
+    <script src="{% static 'js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/load-more-button.js' %}"></script>
+    
 {% endblock %}
 
 {% endblock %}
