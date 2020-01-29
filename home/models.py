@@ -37,7 +37,7 @@ class HomePage(Page):
 
     banner_title = models.CharField(max_length = 100,blank=False,null=True)
     banner_subtitle = models.CharField(max_length = 200,blank=False,null=True)
-    vision_and_mission = RichTextField(features=['h2', 'h3', 'bold', 'italic', 'link'],null=True,blank=True,default="UMA Vision and Mission")
+    vision_and_mission = models.TextField(null=True,blank=True,default="UMA Vision and Mission")
     logo_image = models.ForeignKey(
         "wagtailimages.Image",
         null=True,
