@@ -1,2 +1,2 @@
 ## contributors
-* ruqaiya99 - Ruqaiya 
+* ruqaiya99 - Ruqaiya Arjumand
