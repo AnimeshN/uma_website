@@ -62,3 +62,12 @@ class CardBlock(blocks.StructBlock):
         icon = "placeholder"
         label = "Add Cards"
 
+class participate_pointsBlock(blocks.StructBlock):
+
+    text = blocks.CharBlock(required=True,max_length=255,null=True,blank=False)
+# body = RichTextField(features=['h2', 'h3', 'bold', 'italic', 'link'])
+
+    class Meta:
+       template = "streams/participate_points.html"
+       icon = "edit"
+       label = "text"

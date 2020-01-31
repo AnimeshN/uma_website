@@ -1,0 +1,252 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% load wagtailcore_tags %}
+{% block extra_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/about-us.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/font-awesome.min.css' %}">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+   
+<link href="https://fonts.googleapis.com/css?family=Anton&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+    
+<style>
+  .mystyle{
+    text-align:justify;
+    text-justify:inter-word;
+  
+  }
+ 
+</style> 
+{% endblock %}
+<body id="top">
+
+   
+  <!-- ################################################################################################ -->
+  <div class="wrapper bgded overlay" style="background-image:url('{% static 'img/about-us/facultyy2.jpg' %}')">
+    <section class="hoc container clear"> 
+      
+      
+      <!-- <ul class="nospace group">
+        <li class="one_quarter first">
+         
+        </li>
+        <li class="one_quarter">
+          
+        </li>
+        <li class="one_quarter">
+          
+        </li>
+        <li class="one_quarter">
+         
+        </li>
+      </ul> -->
+      <!-- ################################################################################################ -->
+    </section>
+  
+    <div id="pageintro" class="hoc clear"> 
+      <!-- ################################################################################################ -->
+      
+        <h3 class="heading">Unnat Maharashtra Abhiyan</h3>
+        <p>तकनीकी संस्थाओं का ज्ञान - स्वैच्छिक संगठनों का अनुभव - सरकार के संसाधन
+          सभी को मिलाकर गांवों के विकास के लिए</p>
+        
+      
+      <!-- ################################################################################################ -->
+    </div>
+  </div>
+  
+  <div class="wrapper row3">
+    <main class="hoc container clear"> 
+      <!-- main body -->
+      <!-- ################################################################################################ -->
+      <div class="sectiontitle">
+        
+      </div>
+      <ul class="nospace group services">
+        <li class="one_third first">
+          
+            <h6 class="heading">Vision</h6>
+            <b><p> Unnat Maharashtra Abhiyan is inspired by the vision of transformational change in rural development processes by leveraging knowledge <span id="dots">...</span>
+            <span id="more">institutions to help build the architecture of an Inclusive India. </span></p></b>
+            <footer><a class="btn" onclick="myfunction()" id="myBtn">Read More</a></footer>
+          
+        </li>
+        <li class="one_third">
+          
+            <h6 class="heading">Mission</h6>
+            <b><p>The Mission of Unnat Maharashtra Abhiyan is to enable higher educational institutions to work with the people of rural India in identifying development challenges <span id="dots1">...</span>
+            <span id="more1">and evolving appropriate solutions for accelerating sustainable growth. It also aims to create a virtuous cycle between society and an inclusive academic system by providing knowledge and practices for emerging professions and to upgrade the capabilities of both the public and the private sectors in responding to the development needs of rural India. </span></p></b>
+            <footer><a class="btn" onclick="myfunction1()" id="myBtn1">Read More</a></footer>
+          
+          
+        </li>
+        <li class="one_third">
+     
+            <h6 class="heading">Goals</h6>
+            <b><p> * To build an understanding of the development agenda within institutes of Higher Education and an institutional capacity and training relevant to national needs,<span id="dots2">...</span>
+            <span id="more2"> especially those of rural India.<br><br>* To re-emphasize the need for field work, stake-holder interactions and design for societal objectives as the basis of higher education.<br><br>
+              *To stress on rigorous reporting and useful outputs as central to developing new professions.<br><br>
+              *To provide rural India and regional agencies with access to the professional resources of the institutes of higher education, especially those that have acquired academic excellence in the field of science, engineering and technology, and management.<br><br>
+              *To improve development outcomes as a consequence of this research. To develop new professions and new processes to sustain and absorb the outcomes of research.<br><br>
+              *To foster a new dialogue within the larger community on science, society and the environment and to develop a sense of dignity and collective destiny.<br><br>
+  
+            </span></p></b>
+            <footer><a class="btn" onclick="myfunction2()" id="myBtn2">Read More</a></footer>
+          
+        </li>
+      </ul>
+      <!-- ################################################################################################ -->
+      <!-- / main body -->
+      <div class="clear"></div>
+    </main>
+  </div>
+  <!-- ################################################################################################ -->
+    <!-- {{ self.subtitle}} -->
+  <!-- End Top Background Image Wrapper -->
+  <div class="wrapper row3">
+    <section class="hoc container clear" id="test"> 
+      <!-- main body -->
+      <div class="sectiontitle">
+        <h6 class="heading">Background And Need</h6>
+        
+      </div>
+      <div class="group">
+        <div class="one_half first">
+            
+             <div class="mystyle"> 
+            <b><p> {{ self.background|richtext }} </p></b>
+            </div>
+        </div>
+        <div class="one_half"><img class="inspace-10 borderedbox" src="{% static 'img/about-us/image.JPG' %}" alt=""></div>
+      </div>
+  
+         <!-- ################################################################################################ -->
+         <div class="sectiontitle">
+          <h6 class="heading">History</h6>
+          
+        </div>
+        <div class="group">
+          <div class="one_half" style="margin-right: 20px;"><img class="inspace-10 borderedbox" src="{% static 'img/about-us/history.JPG' %}" alt=""></div>
+           <!-- <div class="one_half first"> -->
+            
+             <div class="mystyle">
+            <b><p>{{ self.history|richtext }}</p></b>
+            </div>
+            
+          </div>
+         
+        
+        
+        <!-- </div> -->
+          </div>
+      <!-- ################################################################################################ -->
+   
+  </div>
+  
+  <!-- ################################################################################################ -->
+  <!-- ################################################################################################ -->
+  <div class="wrapper bgded" style="background-image:url('{% static 'img/about-us/file.JPG' %}')">
+    <div class="hoc split clear">
+      <section> 
+        <!-- ################################################################################################ -->
+        <h2 class="heading">How You Can Participate in UMA?</h2>
+        <p>{{ self.participate|richtext }}</p>
+        <ul class="fa-ul">
+         
+          {% for myblock in page.participate_points %}
+              {% include_block myblock %}          
+          {% endfor %}
+         
+        </ul>
+        <p class="btmspace-30">For more information in this regard, you may please visit the UBA website and contact National Coordinator or Regional Coordinators (Mentoring Institutions).</p>
+        
+        <!-- ################################################################################################ -->
+      </section>
+    </div>
+  </div>
+  <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+  
+  <script>
+    function myfunction() {
+      var dots = document.getElementById("dots");
+      var moreText = document.getElementById("more");
+      var btnText = document.getElementById("myBtn");
+    
+      if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        btnText.innerHTML = "Read more";
+        moreText.style.display = "none";
+      }
+      else {
+       
+      dots.style.display = "none";
+      btnText.innerHTML = "Read less"; 
+      moreText.style.display = "inline";
+    
+    }
+    }
+    </script>
+  
+  <script>     
+    function myfunction1() {
+      var dots = document.getElementById("dots1");
+      var moreText = document.getElementById("more1");
+      var btnText = document.getElementById("myBtn1");
+    
+      if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        btnText.innerHTML = "Read more";
+        moreText.style.display = "none";
+      }
+      else {
+       
+      dots.style.display = "none";
+      btnText.innerHTML = "Read less"; 
+      moreText.style.display = "inline";
+    
+    }
+    }
+    </script>
+  
+  <script>
+    function myfunction2() {
+      var dots = document.getElementById("dots2");
+      var moreText = document.getElementById("more2");
+      var btnText = document.getElementById("myBtn2");
+    
+      if (dots.style.display === "none") {
+        dots.style.display = "inline";
+        btnText.innerHTML = "Read more";
+        moreText.style.display = "none";
+      }
+      else {
+       
+      dots.style.display = "none";
+      btnText.innerHTML = "Read less"; 
+      moreText.style.display = "inline";
+    
+    }
+    }
+  
+  
+  
+    </script>
+    {% block extra_js %}
+      
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    
+    <!-- JAVASCRIPTS -->
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/jquery.backtotop.js' %}"></script>
+    <script src="{% static 'js/jquery.mobilemenu.js' %}"></script>
+    <script src="{% static 'https://cdnjsjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js' %}"></script>
+    <script src="{% static 'js/my.js' %}"></script>
+
+
+    {% endblock %}
+
+{% endblock %}
+</body>
