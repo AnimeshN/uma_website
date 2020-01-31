@@ -36,7 +36,7 @@ class AboutPage(Page):
 
     class Meta:
          verbose_name = "About Us Page"
-#  *************
+
 
 
 

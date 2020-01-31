@@ -1,5 +1,6 @@
 from wagtail.core import blocks
 from wagtail.images.blocks import ImageChooserBlock
+from wagtail.documents.blocks import DocumentChooserBlock
 
 
 class TitleAndTextBlock(blocks.StructBlock):
@@ -71,3 +72,41 @@ class participate_pointsBlock(blocks.StructBlock):
        template = "streams/participate_points.html"
        icon = "edit"
        label = "text"
+
+
+
+
+
+class DocumentBlock(blocks.StructBlock):
+    """document block"""
+
+    title = blocks.CharBlock(required=True)
+
+    points = blocks.ListBlock(
+        blocks.StructBlock(
+            [
+                ("point", blocks.CharBlock(required=True, max_length=200)),
+                ("doc_upload",DocumentChooserBlock(required=True)),
+            ]
+        )
+    )
+
+    class Meta:  #noqa
+        template = "streams/document.html"
+        icon="edit"
+        label=" Documents"
+
+
+
+
+class PresentationBlock(blocks.StructBlock):
+    """document block"""
+    
+    image = ImageChooserBlock(icon="image")
+    doc = DocumentChooserBlock(required=True)
+    
+   
+    class Meta:  #noqa
+        template = "streams/presentation.html"
+        icon="edit"
+        label="Presentation"

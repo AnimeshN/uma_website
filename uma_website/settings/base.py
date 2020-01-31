@@ -28,6 +28,7 @@ INSTALLED_APPS = [
     'search',
     'flex',
     'about',
+    'Docs_Presentations',
     'wagtailmedia',
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
