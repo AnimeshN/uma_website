@@ -1,0 +1,180 @@
+{% extends "base.html" %}
+{% load wagtailcore_tags %}
+{% load static %}
+
+{% block content %}
+    {% block extra_css %}
+    {% endblock %}
+
+
+          <!-- Page Preloder -->
+            <div id="preloder">
+                <div class="loader"></div>
+            </div>
+
+            <!-- Header Section Begin -->
+            <header class="header-section">
+              <div class="header-top">
+             
+                    <div class="container" style="padding-bottom: 0%;">
+                      <div class="row2 mt-2">
+                        <div class="col-2 text-center headerlogo">
+                            <a href="">
+                              <img src="{% static 'img/logo_iit.png' %}" class="img-fluid"> </a>
+                        </div>
+        
+                         <div class="col-8">
+                              <h2 class="text-center" style="text-align:center;color:brown;font:simplifica; font-size: xx-large; padding-top: 20px;"><b>UNNAT MAHARASHTRA ABHIYAN</b></h2><br>
+        
+                                  <p class="text-center headersloganmob px-2" style="text-align:center;">तकनीकी संस्थाओं का ज्ञान - स्वैच्छिक संगठनों का अनुभव - सरकार के संसाधन सभी को मिलाकर गांवों के विकास के लिए</p>
+                        </div>
+        
+                        </div>
+                      </div>
+                    </div>
+        
+        
+                <!-- NEW NAVBAR -->
+                <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="padding-top:0%;">
+                  
+                 
+                  <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
+                    <!-- <span class="glyphicon glyphicon-menu-right"></span> -->
+                    <a class="navbar-brand" href="#" style="font-size:medium;">Menu</a>
+                    <span class="navbar-toggler-icon"></span>
+        
+                  </button>
+                
+                  <div class="navbar-collapse collapse" id="navbarColor02" style="text-align:center; font-size: medium;">
+                    <ul class="navbar-nav mr-auto" style="margin: auto;">
+                      <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#aboutus">About Us</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="#workshopsandevents">Workshops/Events</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="">Participating Institutes</a>
+                      </li>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                          Resources
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="font-size: small;">
+                          <a class="dropdown-item" href="#importantlinks">Important Links</a>
+                        </div>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="
+                        #contact">Contact</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="">Apply</a>
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" href="">Login</a>
+                      </li>
+                    </ul>
+                    <!-- <form class="form-inline my-2 my-lg-0">
+                      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    </form> -->
+                  </div>
+                </nav>
+           </header>
+            <!-- Header End -->
+
+
+             <!-- <div class="destination_details_info">
+             <div class="container"> 
+                  <div class="row justify-content-center">
+                      <div class="col-lg-8 col-md-9" style="padding-left: 80px; padding-right: 20px;"> 
+                          <div class="destination_info"> -->
+                            
+           
+                            <div class="faq-section spad" style="padding-top:40px;">
+                              <div class="container">
+                                  <div class="row">
+                                      <div class="col-lg-12">
+                                          <div class="faq-accordin">
+                                              <div class="accordion" id="accordionExample">
+                                                <h3 style="text-align: center; padding-bottom: 30px; padding-top: 20px; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 40px; color: #85144b;">{{ self.subtitle }}</b></h3>    
+                                                      {% for block in page.content %}
+                                                          {% include_block block %}
+                                                      {% endfor %}
+                                                    </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div>
+                                  </div>
+                  
+                          <!-- </div>
+                       </div>
+                    </div>
+                </div>
+            </div>  -->
+
+ <!-- Footer Section Begin -->
+            <!-- Footer Content -->
+
+            <footer class="footer-distributed">
+
+              <div class="footer-left">
+                    <!-- <img src="img/logo.png">
+                <h3>About<span>Eduonix</span></h3> -->
+
+                        <h3>Unnat Maharashtra Abhiyan</h3>
+
+                <p class="footer-links">
+                  <a href="#">Home</a>
+                  |
+                  <a href="#">Blog</a>
+                  |
+                  <a href="#">About</a>
+                  |
+                  <a href="#">Contact</a>
+                </p>
+
+                <p class="footer-company-name">© 2020 UMA, IIT Bombay</p>
+              </div>
+
+              <div class="footer-center">
+                <div>
+                  <i class="fa fa-map-marker"></i>
+                    <p><span>Main Gate Rd, IIT Area, Powai</span>
+                    Mumbai, Maharashtra 400076</p>
+                </div>
+
+                <div>
+                  <i class="fa fa-phone"></i>
+                  <p>+91 22-27782183</p>
+                </div>
+                <div>
+                  <i class="fa fa-envelope"></i>
+                  <p><a href="mailto:support@uma.com">support@uma.com</a></p>
+                </div>
+              </div>
+              <div class="footer-right">
+                <p class="footer-company-about">
+                  <span>About UMA</span>
+                  UMA is a project of the Ministry of Higher and Technical Education (Government of Maharashtra). Its mandate is to build an independent and public knowledge infrastructure for the state of Maharashtra which will bring socio-economic and cultural development for its people, especially those in the bottom 80% of the socio-economic strata.</p>
+                <div class="footer-icons">
+                  <a href="#"><i class="fa fa-facebook"></i></a>
+                  <a href="#"><i class="fa fa-twitter"></i></a>
+                  <a href="#"><i class="fa fa-instagram"></i></a>
+                  <a href="#"><i class="fa fa-linkedin"></i></a>
+                  <a href="#"><i class="fa fa-youtube"></i></a>
+                </div>
+              </div>
+            </footer>
+            <!-- Footer Section End -->
+            {% block extra_js %}
+            <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> 
+        
+            {% endblock %}
+
+{% endblock %}
