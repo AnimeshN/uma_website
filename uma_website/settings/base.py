@@ -29,6 +29,8 @@ INSTALLED_APPS = [
     'flex',
     'GR',
     'RDE',  
+    'about',
+    'Docs_Presentations',
     'wagtailmedia',
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
