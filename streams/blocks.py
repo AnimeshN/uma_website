@@ -64,6 +64,7 @@ class CardBlock(blocks.StructBlock):
         label = "Add Cards"
 
 
+
 # -------------BLOCK FOR GR PAGE--------------
 class ListAndButtonBlock(blocks.StructBlock):
     """List and buttons of main"""
@@ -92,7 +93,6 @@ class ListAndButtonBlock(blocks.StructBlock):
 # -------------BLOCK FOR RDE PAGE-------------
 class ResourcesBlock(blocks.StructBlock):
     """List and buttons of main"""
-
     title = blocks.CharBlock(required=True)
 
     points = blocks.ListBlock(
@@ -108,3 +108,55 @@ class ResourcesBlock(blocks.StructBlock):
         template = "streams/resources_page.html"
         icon="edit"
         label="Resources"
+
+
+# -------------BLOCK FOR ABOUT US PAGE-------------
+
+class participate_pointsBlock(blocks.StructBlock):
+
+    text = blocks.CharBlock(required=True,max_length=255,null=True,blank=False)
+
+    class Meta:
+       template = "streams/participate_points.html"
+       icon = "edit"
+       label = "text"
+
+
+
+# -------------BLOCKS FOR DOCUMENTATION AND PRESENTATIOON PAGE-------------
+
+class DocumentBlock(blocks.StructBlock):
+    """document block"""
+
+    title = blocks.CharBlock(required=True)
+
+    points = blocks.ListBlock(
+        blocks.StructBlock(
+            [
+                ("point", blocks.CharBlock(required=True, max_length=200)),
+                ("doc_upload",DocumentChooserBlock(required=True)),
+            ]
+        )
+    )
+
+    class Meta:  #noqa
+        template = "streams/document.html"
+        icon="edit"
+        label=" Documents"
+
+
+
+class PresentationBlock(blocks.StructBlock):
+    """document block"""
+    
+    image = ImageChooserBlock(icon="image")
+    doc = DocumentChooserBlock(required=True)
+    
+   
+    class Meta:  #noqa
+        template = "streams/presentation.html"
+        icon="edit"
+        label="Presentation"
+
+
+       
