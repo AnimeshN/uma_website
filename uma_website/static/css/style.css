@@ -590,12 +590,12 @@ ol {
 	opacity: 1;
 }
 
-.product-slider .owl-dots {
+.product-slider myowl {
 	text-align: center;
 	margin-top: 27px;
 }
 
-.product-slider .owl-dots button {
+.product-slider myowl button {
 	width: 6px;
 	height: 6px;
 	background: #D8D9DA;
@@ -606,11 +606,11 @@ ol {
 	transition: all 0.3s;
 }
 
-.product-slider .owl-dots button:last-child {
+.product-slider myowl button:last-child {
 	margin-right: 0;
 }
 
-.product-slider .owl-dots button.active {
+.product-slider myowl button.active {
 	width: 30px;
 	background: #252525;
 	border-radius: 50px;
@@ -3934,7 +3934,7 @@ ol {
 /* line 73, ../../Arafath/CL/December/235. Job board/HTML/scss/_candidates.scss */
 .featured_candidates_area .owl-carousel .owl-nav div.owl-next {
   left: auto;
-  right: -19px;
+  /* right: -19px; */
 }
 
 /* line 77, ../../Arafath/CL/December/235. Job board/HTML/scss/_candidates.scss */

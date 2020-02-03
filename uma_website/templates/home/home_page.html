@@ -16,9 +16,8 @@ Unnat Maharashtra Abhiyan
 {% block extra_css %}
 <!-- <link rel="stylesheet" href="{% static 'css/footer_style.css' %}"> -->
 <!-- <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"> -->
-<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}" type="text/css">
-<!-- <link rel="stylesheet" href="{% static 'css/themify-icons.css' %}" type="text/css"> -->
+<link rel="stylesheet" href="{% static 'css/themify-icons.css' %}" type="text/css">
 <!-- <link rel="stylesheet" href="{% static 'css/elegant-icons.css' %}" type="text/css"> -->
 <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static 'css/nice-select.css' %}" type="text/css">
@@ -26,8 +25,13 @@ Unnat Maharashtra Abhiyan
 <!-- <link rel="stylesheet" href="{% static 'css/slicknav.min.css' %}" type="text/css"> -->
 <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static 'css/load-more-button.css' %}" type="text/css">
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
 
-
+<style>
+  #html5-watermark {
+      display:none !important;
+   }
+  </style>
 {% endblock %}
 
 <!-- <div id="preloder">
@@ -208,45 +212,61 @@ Unnat Maharashtra Abhiyan
 
 
 
-<!-- Media gallery Section Begin -->
+<!-- Media gallery Begin -->
 <section class="man-banner spad">
   <div class="container-fluid">
-      <div class="row">
-          <div class="col-lg-8" >
-              <div class="filter-control">
-                <div class="section-title">
-                        <h2>Media Gallery</h2>
-                </div>
-              </div>
-              <div class="product-slider owl-carousel">
-                  <div class="product-item">  
-                      <div class="pi-pic">
-                          <img src="img/products/man-1.jpg" alt="">
-                          <div class="sale">Sale</div>
-                          <div class="icon">
-                              <i class="icon_heart_alt"></i>
-                          </div>
-                          <ul>
-                              <li class="w-icon active"><a href="#"><i class="icon_bag_alt"></i></a></li>
-                              <li class="quick-view"><a href="#">+ Quick View</a></li>
-                              <li class="w-icon"><a href="#"><i class="fa fa-random"></i></a></li>
-                          </ul>
-                      </div>
-                      <div class="pi-text">
-                          <div class="catagory-name">Coat</div>
-                          <a href="#">
-                              <h5>Pure Pineapple</h5>
-                          </a>
-                          <div class="product-price">
-                              $14.00
-                              <span>$35.00</span>
-                          </div>
-                      </div>
+    <div class="row">
+      <div class="col-lg-12" >
+            <div class="section-title">
+                    <h2>Media Gallery</h2>
+            </div>
+          <div class="product-slider owl-carousel">
+              <div class="item"><a href="{% static 'img/homemedia/man-1.jpg' %}" class="html5lightbox" ><img class="img-fluid" src="{% static 'img/homemedia/man-1.jpg' %}"></a></div>
+              <div class="item"><a href="{% static 'img/homemedia/man-2.jpg' %}" class="html5lightbox" ><img class="img-fluid" src="{% static 'img/homemedia/man-2.jpg' %}"></a></div>
+              <div class="item"><a href="{% static 'img/homemedia/man-3.jpg' %}" class="html5lightbox" ><img class="img-fluid" src="{% static 'img/homemedia/man-3.jpg' %}"></a></div>
+              <div class="item"><a href="https://www.youtube.com/watch?v=P9a-_GCOFr0" class="html5lightbox" data-width="480" data-height="320" title="Big Buck Bunny"><img class="img-fluid" src="{% static 'img/homemedia/man-3.jpg' %}"></a></div>
+          </div>
+      </div>
+  </div>
+  </div>
+</section>
+<hr>
+
+<section class="spad" >
+  <div class="featured_candidates_area">
+      <div class="container" id="contact">
+           <div class="row">
+             <div class="col-lg-12" >
+                  <div class="filter-control">
+                    <div class="section-title">
+                            <h2>Contact</h2>
+                    </div>
                   </div>
-      
+                  <div class="container-fluid">
+                  <div class="row">
+                        <div style="width: 50%; float:left">
+                      <div class="single_candidates text-center">
+                          <div class="thumb">
+                              <img src="img/1.png" alt="">
+                          </div>
+                          <a href="#"><h4>Markary Jondon</h4></a>
+                          <p>Software Engineer</p>
+                      </div>
+                    </div>
+                    <div style="width: 50%; float:left">
+                      <div class="single_candidates text-center">
+                          <div class="thumb">
+                              <img src="img/2.png" alt="">
+                          </div>
+                          <a href="#"><h4>Markary Jondon</h4></a>
+                          <p>Software Engineer</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                  <!-- </section> -->
               </div>
           </div>
-
       </div>
   </div>
 </section>
@@ -318,7 +338,13 @@ Unnat Maharashtra Abhiyan
     <script src="{% static 'js/owl.carousel.min.js' %}"></script>
     <script src="{% static 'js/main.js' %}"></script>
     <script src="{% static 'js/load-more-button.js' %}"></script>
-    
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
+    <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/html5lightbox.js' %}"></script>
+   
 {% endblock %}
 
 {% endblock %}
