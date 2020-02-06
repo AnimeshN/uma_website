@@ -158,5 +158,19 @@ class PresentationBlock(blocks.StructBlock):
         icon="edit"
         label="Presentation"
 
+# -------------BLOCKS FOR WORKSHOP PAGE ------------
+class DescriptiveRichtextBlock(blocks.RichTextBlock):
 
+    def __init__(self, required=True, help_text=None, editor='default', features=None, validators=(), **kwargs):
+        super().__init__(**kwargs)
+        self.features = [
+            "bold",
+            "italic",
+            "link",
+        ]
+
+    class Meta:
+        template = "streams/richtext_block.html"
+        icon="edit"
+        label = "Descriptive RichText"
        
