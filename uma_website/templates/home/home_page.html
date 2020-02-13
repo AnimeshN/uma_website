@@ -25,12 +25,58 @@ Unnat Maharashtra Abhiyan
 <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static 'css/load-more-button.css' %}" type="text/css">
 <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" type="text/css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" />
 
 <style>
   #html5-watermark {
       display:none !important;
    }
+   #mapid{
+     width: 100%;
+     height: 500px;
+     margin-bottom:50px;
+   }
+
+   .info {
+    padding: 6px 8px;
+    font: 14px/16px Arial, Helvetica, sans-serif;
+    background: white;
+    background: rgba(255,255,255,0.8);
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 5px;
+}
+  .info h4 {
+    margin: 0 0 5px;
+    color: #777;
+}
+.greendot {
+  height: 20px;
+  width: 20px;
+  background-color: green;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.reddot {
+  height: 20px;
+  width: 20px;
+  background-color:red;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dottext{
+  height: 30px;
+  text-align: center;
+  line-height: 1.5;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
   </style>
+
+  
 {% endblock %}
 
 <!-- <div id="preloder">
@@ -130,7 +176,18 @@ Unnat Maharashtra Abhiyan
   </div>
 </section>
 
-
+<!-- workshop/event -->
+<div id="pimap">
+  <div class="row">
+      <div class="col-lg-12">
+          <div class="section-title">
+              <h2>Participating Institutes</h2>
+          </div>
+      </div>
+  </div>
+  <div id = 'mapid'>   
+  </div>
+</div>
 
 <!-- Media gallery Begin -->
 <section class="man-banner spad">
@@ -186,8 +243,8 @@ Unnat Maharashtra Abhiyan
                             Chairperson, UMA Advisory Committee<br>
                             sohoni@cse.iitb.ac.in<br>
                             022 2576 7729</p>
-                      </div>
-                    </div>
+                          </div>
+                        </div>
                   </div>
                 </div>
                   <!-- </section> -->
@@ -218,7 +275,10 @@ Unnat Maharashtra Abhiyan
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.js"></script>
     <script type="text/javascript" src="{% static 'js/jquery.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/html5lightbox.js' %}"></script>
-   
-{% endblock %}
+    <script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script type="text/javascript" src="{% static 'js/leaflet-ajax.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/pi_map.js' %}"></script>
+
+    {% endblock %}
 
 {% endblock %}
