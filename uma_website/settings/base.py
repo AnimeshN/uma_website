@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'GR',
     'RDE',  
     'about',
+    'vreport',
     'Docs_Presentations',
     'wagtailmedia',
     'wagtail.contrib.forms',
