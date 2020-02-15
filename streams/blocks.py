@@ -158,5 +158,28 @@ class PresentationBlock(blocks.StructBlock):
         icon="edit"
         label="Presentation"
 
+from wagtail.core import blocks
+from wagtail.documents.blocks import DocumentChooserBlock
+
+
+class ReportsBlock(blocks.StructBlock):
+
+    cards = blocks.StructBlock(
+            [                
+                ("title", blocks.CharBlock(required=True, max_length=100)),
+                ("text", blocks.TextBlock(required=True, max_length=500)),
+                ("document", DocumentChooserBlock(required=True)),
+            ]
+        )
+           
+    class Meta:
+        template = "streams/reports_block.html"
+        icon = "placeholder"
+        label = "Sample Reports"
+        
+
+
+     
+
 
        
