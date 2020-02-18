@@ -158,6 +158,7 @@ class PresentationBlock(blocks.StructBlock):
         icon="edit"
         label="Presentation"
 
+<<<<<<< HEAD
 from wagtail.core import blocks
 from wagtail.documents.blocks import DocumentChooserBlock
 
@@ -181,5 +182,21 @@ class ReportsBlock(blocks.StructBlock):
 
      
 
+=======
+# -------------BLOCKS FOR WORKSHOP PAGE ------------
+class DescriptiveRichtextBlock(blocks.RichTextBlock):
+>>>>>>> 2b06ef7910f5ae1932b544c3d330dcfa2f78bcb4
 
+    def __init__(self, required=True, help_text=None, editor='default', features=None, validators=(), **kwargs):
+        super().__init__(**kwargs)
+        self.features = [
+            "bold",
+            "italic",
+            "link",
+        ]
+
+    class Meta:
+        template = "streams/richtext_block.html"
+        icon="edit"
+        label = "Descriptive RichText"
        
