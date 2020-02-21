@@ -87,3 +87,7 @@ class HomePage(Page):
         ],heading="Workshop and events"),
      
     ]
+
+  
+
+    

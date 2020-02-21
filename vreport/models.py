@@ -28,7 +28,9 @@ class VreportPage(Page):
         FieldPanel("description"),
         StreamFieldPanel("content"),
     ]
+    
 
     class Meta:  #noqa
-        verbose_name = "village report Page"
-        verbose_name_plural = "Village Report Pages"
+        verbose_name = "vreport Page"
+        verbose_name_plural = "Vreport Pages"
+

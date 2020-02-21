@@ -26,11 +26,13 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 INSTALLED_APPS = [
     'home',
     'search',
+    'people',
     'flex',
     'GR',
     'RDE',  
     'about',
     'vreport',
+    'media_gallery',
     'Docs_Presentations',
     'wagtailmedia',
     'wagtail.contrib.forms',

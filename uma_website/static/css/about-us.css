@@ -17,14 +17,14 @@ Header
 -----------------------*/
 
 .ht-right .lan-selector {
-	max-width: 142px;
+	max-width: 50px;
 	cursor: pointer;
 	display: inline-block;
 	position: relative;
 }
 
 .ht-right .lan-selector .ddcommon {
-	max-width: 142px;
+	max-width: 50px;
 	-webkit-box-shadow: none !important;
 	box-shadow: none !important;
 	outline: none;
@@ -37,7 +37,7 @@ Header
 }
 
 .ht-right .lan-selector .ddcommon .ddTitle .ddTitleTe#xt span {
-	font-size: 14px;
+	font-size: 12px;
 	color: #252525;
 }
 
@@ -78,22 +78,22 @@ Header
   flex: 0 0 16.666667%;
   max-width: 16.666667%;
 	position: relative;
-	width: 100%;
+	width: 50%;
 	min-height: 1px;
 }
 
 .col-8 {
 	flex: 0 0 66.666667%;
-  max-width: 66.666667%;
+  max-width: 50.666667%;
 	position: relative;
-	width: 100%;
+	width: 50%;
 	min-height: 1px;
 	padding-right: 15px;
   padding-left: 15px;
 }
 
 .img-fluid{
-	max-width:100%;
+	max-width:50%;
 	height:auto;
 }
 
@@ -105,29 +105,29 @@ Header
 .ht-right .lan-selector .ddcommon .ddTitle .ddArrow:before {
 	content: "3";
 	font-family: "ElegantIcons";
-	font-size: 14px;
+	font-size: 12px;
 	color: #636363;
 	float: right;
 	position: relative;
 	right: 0;
-	line-height: 26px;
+	line-height: 20px;
 }
 
 .ht-right .lan-selector .ddcommon .ddChild {
 	background: #fff;
-	max-width: 142px;
-	width: 100%;
+	max-width: 50px;
+	width: 50%;
 	position: relative;
 	left: 0;
 }
 
 .ht-right .lan-selector .ddcommon .ddChild ul {
 	width: 100%;
-	max-width: 142px;
+	max-width: 50px;
 }
 
 .ht-right .lan-selector .ddcommon .ddChild ul li {
-	line-height: 23px;
+	line-height: 20px;
 	padding: 0px 10px;
 	list-style: none;
 }
@@ -137,7 +137,7 @@ Header
 }
 
 .ht-right .lan-selector .ddcommon .ddChild ul li span {
-	font-size: 13px;
+	font-size: 12px;
 	color: #000;
 	letter-spacing: 0.325px;
 }
@@ -157,7 +157,7 @@ Header
 #header{padding:50px 0;}
 
 #header #logo *{margin:0; padding:0; line-height:1;}
-#header #logo h1{margin-top:8px; font-size:24px;}
+#header #logo h1{margin-top:4px; font-size:24px;}
 #header #logo p{margin-top:-2px; font-size:.9rem; text-transform:lowercase;}
 
 #header #quickinfo{font-size:.8rem; text-transform:uppercase;}
