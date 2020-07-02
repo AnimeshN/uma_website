@@ -33,7 +33,19 @@ INSTALLED_APPS = [
     'about',
     'vreport',
     'media_gallery',
+    'workshop',
     'Docs_Presentations',
+    'apply',
+    'aiei',
+    'msme',
+    'eng1',
+    'eng2',
+    'polytechnic',
+    'tdc',
+    'jsa',
+    'rws',
+    'empanelment',
+    
     'wagtailmedia',
     'wagtail.contrib.forms',
     'wagtail.contrib.redirects',
@@ -56,7 +68,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',
+
+
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -90,6 +110,13 @@ TEMPLATES = [
         },
     },
 ]
+
+AUTHENTICATION_BACKENDS = (
+    # Needed to login by username in Django admin, regardless of `allauth`
+    'django.contrib.auth.backends.ModelBackend',
+    # `allauth` specific authentication methods, such as login by e-mail
+    'allauth.account.auth_backends.AuthenticationBackend',
+    )
 
 WSGI_APPLICATION = 'uma_website.wsgi.application'
 
@@ -169,3 +196,9 @@ WAGTAIL_SITE_NAME = "uma_website"
 # Base URL to use when referring to full URLs within the Wagtail admin backend -
 # e.g. in notification emails. Don't include '/admin' or a trailing slash
 BASE_URL = 'http://example.com'
+
+WAGTAILSEARCH_BACKENDS = {
+    'default': {
+        'BACKEND': 'wagtail.search.backends.db',
+    }
+}

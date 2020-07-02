@@ -14,25 +14,25 @@ class AboutPage(Page):
     """About page class""" 
     template = "about/about_page.html"
 
-    background = RichTextField(features=['h2', 'h3', 'bold', 'italic', 'link'],null=True,blank=False)
-    history = RichTextField(features=['h2', 'h3', 'bold', 'italic', 'link'],null=True,blank=False)
+    # uma_structure = RichTextField(features=['h2', 'h3', 'bold', 'italic', 'link'],null=True,blank=False)
+    # history = RichTextField(features=['h2', 'h3', 'bold', 'italic', 'link'],null=True,blank=False)
     
-    participate = RichTextField(features=['h2', 'h3', 'bold', 'italic', 'link'],null=True,blank=False)
-    participate_points = StreamField(
-		[
-			("text",blocks.participate_pointsBlock())
-		],
-		null=True,
-		blank=True
-	)
+  #   participate = RichTextField(features=['h2', 'h3', 'bold', 'italic', 'link'],null=True,blank=False)
+  #   participate_points = StreamField(
+	# 	[
+	# 		("text",blocks.participate_pointsBlock())
+	# 	],
+	# 	null=True,
+	# 	blank=True  
+	# )
 	
-    content_panels = Page.content_panels + [
-         FieldPanel("background"),
-         FieldPanel("history"),
-         StreamFieldPanel("participate_points"),
-         FieldPanel("participate"),
+    # content_panels = Page.content_panels + [
+    #      FieldPanel("uma_structure")
+         # FieldPanel("history"),
+        #  StreamFieldPanel("participate_points"),
+        #  FieldPanel("participate"),
         
-      ]
+      # ]
 
     class Meta:
          verbose_name = "About Us Page"
