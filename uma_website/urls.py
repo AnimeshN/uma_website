@@ -16,7 +16,7 @@ urlpatterns = [
     url(r'', include(wagtaildocs_urls)),
 
     url(r'^search/$', search_views.search, name='search'),
-    url(r'^accounts/', include('allauth.urls')),
+    # url(r'^accounts/', include('allauth.urls')),
     # website.com/login/
 
     # For anything not caught by a more specific rule above, hand over to
